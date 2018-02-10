@@ -20,13 +20,13 @@ import java.util.Arrays;
 public class Main {
     
     static Sorts s= new Sorts();
-    public Generador g ;
      public void Main(){
          Generador g = new Generador();
       
      }
      
       public static void main(String[] args){
+      
         String linea = "";
         Integer arr[] = new Integer[3000];
         try{
@@ -35,9 +35,14 @@ public class Main {
            BufferedReader br = new BufferedReader(new FileReader(arc));
            while((linea = br.readLine()) != null){
                linea = br.readLine();
-               arr[i] = Integer.parseInt(linea);
+               Integer x = Integer.parseInt(linea);
+               arr[i] = x;
+	       System.out.println(linea);
+	       i++;
            }
-           s.mergeSort(arr,0,arr.length-1);
+	//for(int j = 0; j < arr.length ; j++)
+	//System.out.println(arr[j]);
+        // s.mergeSort(arr,0,arr.length-1);
         }catch(FileNotFoundException ex){
             System.out.println("Error no encontrado");
         }catch(IOException ex){
@@ -46,7 +51,7 @@ public class Main {
         //ar = gnomeSort(arr);
         //mergeSort(arr, 0 , arr.length-1);
         //s.radixSort(a);
-        System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(arr));
     }
     
 }

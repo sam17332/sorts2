@@ -19,10 +19,16 @@ import java.util.Random;
 public class Generador {
     
     public void Generador(){
+    }
+    
+    public static void crear(){
     Random ran = new Random();
     Integer[] x = new Integer[3000];
     for (int i= 0; i < x.length; i++)
+    {
         x[i] = ran.nextInt(101);
+        System.out.println(x[i]);
+    }
     
     File arc = new File("generado.txt");
     BufferedWriter bw = null;
@@ -30,7 +36,7 @@ public class Generador {
     try{
        fw = new FileWriter(arc);
        bw = new BufferedWriter(fw);
-        for (int i = 0; i< 3000; ){
+        for (int i = 0; i< x.length; i++){
          bw.write(x[i]+"\n");
         }
         bw.close();
@@ -40,4 +46,8 @@ public class Generador {
         System.err.println("Error: "+e.getMessage());
     }
     }
+    
+     public static void main(String[] args){
+         crear();
+     }
 }

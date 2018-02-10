@@ -80,16 +80,17 @@ public class Sorts {//implements Comparable<Integer> {
         }
     }
     
-    public void mergeSort(Integer[] num, int iz, int de){
+    public Integer[] mergeSort(Integer[] num, int iz, int de){
         if (iz < de){
             int m = (iz+de)/2;
             mergeSort(num, iz, m);
             mergeSort(num, m+1, de);
             merge(num, iz, m, de);
         }
+        return num;
     }
     
-    public int getMax(int num[]){
+    public Integer getMax(Integer num[]){
         int max = num[0];
         for (int i = 1; i< num.length; i++){
             if(num[i] > max)
@@ -98,7 +99,7 @@ public class Sorts {//implements Comparable<Integer> {
         return max;
     }
     
-    public void countSort(int num[], int exp){
+    public void countSort(Integer num[], int exp){
         int out[] = new int[num.length];
         int i;
         int c[] = new int[10];
@@ -118,10 +119,57 @@ public class Sorts {//implements Comparable<Integer> {
         
     }
     
-    public void radixSort(int num[]){
-        int m = getMax(num);
+    public Integer[] radixSort(Integer num[]){
+        Integer m = getMax(num);
         for(int exp = 1; m/exp > 0; exp *= 10)
             countSort(num, exp);
+        return num;
     }
+
+ public int partition(Integer arr[], int left, int right)
+    {
+          int pivot = arr[right];
+          int i = (left-1);
+          for(int j = left; j< right; j++){
+              if(arr[j] <= pivot){
+                  i++;
+                  int temp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = temp;
+              }
+          }
+        int temp = arr[i+1];
+        arr[i+1] = arr[right];
+        arr[right] = temp;
+         
+          return i+1;
+    }
+    
+    public Integer[] quickSort(Integer arr[], int left, int right) 
+    {
+        int index = partition(arr, left, right);
+        if (left < index - 1)
+              quickSort(arr, left, index - 1);
+        if (index < right)
+              quickSort(arr, index+1, right);
+        return arr;
+  }
+
+ public Integer[] insertionSort(Integer arr[], int n)
+    {
+       int i, k, j;
+       for (i = 1; i < n; i++)
+       {
+           k = arr[i];
+           j = i-1;
+           while (j >= 0 && arr[j] > k)
+           {
+               arr[j+1] = arr[j];
+               j = j-1;
+           }
+           arr[j+1] = k;
+       }
+       return arr;
+    }    
    
 }
