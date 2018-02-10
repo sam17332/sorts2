@@ -16,7 +16,7 @@ public class Sorts {//implements Comparable<Integer> {
     //public int compareTo(Integer i){
         
     //}
-    public static Integer[] gnomeSort(Integer num[]){
+    public Integer[] gnomeSort(Integer num[]){
         int c = 0;
         Integer temp = 0;
         while (c < num.length){
@@ -36,7 +36,7 @@ public class Sorts {//implements Comparable<Integer> {
         return num;
     }
     
-    public static void merge(Integer num[], int iz, int me, int de){
+    public void merge(Integer num[], int iz, int me, int de){
         int t1 = me - iz + 1;
         int t2 = de - me;
         Integer L[] = new Integer [t1];
@@ -80,7 +80,7 @@ public class Sorts {//implements Comparable<Integer> {
         }
     }
     
-    public static void mergeSort(Integer[] num, int iz, int de){
+    public void mergeSort(Integer[] num, int iz, int de){
         if (iz < de){
             int m = (iz+de)/2;
             mergeSort(num, iz, m);
@@ -89,7 +89,7 @@ public class Sorts {//implements Comparable<Integer> {
         }
     }
     
-    public static int getMax(int num[]){
+    public int getMax(int num[]){
         int max = num[0];
         for (int i = 1; i< num.length; i++){
             if(num[i] > max)
@@ -98,7 +98,7 @@ public class Sorts {//implements Comparable<Integer> {
         return max;
     }
     
-    public static void countSort(int num[], int exp){
+    public void countSort(int num[], int exp){
         int out[] = new int[num.length];
         int i;
         int c[] = new int[10];
@@ -118,19 +118,10 @@ public class Sorts {//implements Comparable<Integer> {
         
     }
     
-    public static void radixSort(int num[]){
+    public void radixSort(int num[]){
         int m = getMax(num);
         for(int exp = 1; m/exp > 0; exp *= 10)
             countSort(num, exp);
     }
-    public static void main(String[] args){
-        
-        Integer arr[] = {34,2,10,-9};
-        Integer ar[] = new Integer[arr.length];
-        int a[] = {170, 45, 75, 90, 802, 24, 2, 66};
-        //ar = gnomeSort(arr);
-        //mergeSort(arr, 0 , arr.length-1);
-        radixSort(a);
-        System.out.println(Arrays.toString(a));
-    }
+   
 }
