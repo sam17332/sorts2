@@ -32,23 +32,18 @@ public class Main {
              {
                 x[i] = ran.nextInt(101);
               }
-	//for(int j = 0; j < arr.length ; j++)
-	//System.out.println(arr[j]);
-        // s.mergeSort(arr,0,arr.length-1);
-        System.out.println("Gnome Sort");
-        System.out.println(Arrays.toString(s.gnomeSort(x)));
-        System.out.println("Insertion Sort");
-        System.out.println(Arrays.toString(s.insertionSort(x, x.length)));
-        System.out.println("Quick Sort");
-        System.out.println(Arrays.toString(s.quickSort(x, 0, x.length-1)));
-        System.out.println("Merge Sort");
-        System.out.println(Arrays.toString(s.mergeSort(x, 0, x.length-1)));
-        System.out.println("Radix Sort");
-        System.out.println(Arrays.toString(s.radixSort(x)));
-        //ar = gnomeSort(arr);
-        //mergeSort(arr, 0 , arr.length-1);
-        //s.radixSort(a);
-        //System.out.println(Arrays.toString(arr));
+        
+      System.out.println("Gnome Sort");
+      System.out.println(Arrays.toString(s.gnomeSort(x)));
+      System.out.println("Insertion Sort");
+      System.out.println(Arrays.toString(s.insertionSort(x, x.length)));
+      System.out.println("Quick Sort");
+      System.out.println(Arrays.toString(s.quickSort(x, 0, x.length-1)));
+      System.out.println("Merge Sort");
+      System.out.println(Arrays.toString(s.mergeSort(x, 0, x.length-1)));
+      System.out.println("Radix Sort");
+      System.out.println(Arrays.toString(s.radixSort(x)));
+       
     }
     
 }
